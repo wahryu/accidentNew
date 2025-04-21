@@ -175,51 +175,29 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QLabel" name="label_4">
-         <property name="minimumSize">
-          <size>
-           <width>92</width>
-           <height>21</height>
-          </size>
-         </property>
+        <widget class="QPushButton" name="TargetBtn">
          <property name="maximumSize">
           <size>
-           <width>92</width>
-           <height>21</height>
+           <width>100</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="font">
           <font>
            <family>ＭＳ ゴシック</family>
-           <pointsize>16</pointsize>
+           <pointsize>14</pointsize>
            <weight>75</weight>
-           <italic>false</italic>
            <bold>true</bold>
-           <underline>false</underline>
-           <strikeout>false</strikeout>
           </font>
          </property>
          <property name="cursor">
-          <cursorShape>WaitCursor</cursorShape>
-         </property>
-         <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">Qlabel {
-	font: 1pt &quot;MS Sans Serif&quot;;
-	color : rgb(15, 191, 15);
-}
-</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
+          <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="text">
           <string>目標日数</string>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
+         <property name="flat">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -427,6 +405,9 @@
       <width>141</width>
       <height>131</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="text">
      <string/>

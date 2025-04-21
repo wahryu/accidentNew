@@ -28,6 +28,8 @@ class MainMenu(QMainWindow):
         self.setWindowTitle("無災害記録表")
         f = open(resource_path("start_date.txt"), "r")
         self.startDate = datetime.strptime(f.read(), '%Y-%m-%d').date()
+        ft = open(resource_path("target.txt"), "r")
+        self.targetLcd.display(int(ft.read()))
         # self.refreshAction.triggered.connect(self.refresh)
         self.workerRF = worker.WorkerFileRefresh()
         self.worker_threadRF = QThread()
@@ -39,6 +41,7 @@ class MainMenu(QMainWindow):
         self.refresh()
         
         self.ResetBtn.clicked.connect(self.ResetConfirm)
+        self.TargetBtn.clicked.connect(self.TargetSetting)
 
         
     def refresh(self):
@@ -80,6 +83,26 @@ class MainMenu(QMainWindow):
         
         self.refresh()
         self.worker_threadRF.start()
+        
+    def TargetSetting(self):
+        text, ok = QInputDialog.getText(self, '目標日数', '新しい目標日数を入力してください！！:')
+        if ok:
+            if text.isdigit():
+                self.targetLcd.display(int(text))
+                f = open(resource_path("target.txt"), "w")
+                f.write(text)
+                f.close()
+                msg = "目標日数を設定しました"
+                QMessageBox.information(self, '完了', msg, QMessageBox.StandardButton.Ok)
+            else:
+                msg = "数字を入力してください"
+                QMessageBox.warning(self, '警告', msg, QMessageBox.StandardButton.Ok)
+
+        else:
+            msg = "パスワードが違います"
+            QMessageBox.warning(self, '警告', msg, QMessageBox.StandardButton.Ok)
+            # 何もしない
+            pass
         
 if __name__ == "__main__":
     app = QApplication(sys.argv)
