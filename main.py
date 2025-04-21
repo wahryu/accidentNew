@@ -99,8 +99,6 @@ class MainMenu(QMainWindow):
                 QMessageBox.warning(self, '警告', msg, QMessageBox.StandardButton.Ok)
 
         else:
-            msg = "パスワードが違います"
-            QMessageBox.warning(self, '警告', msg, QMessageBox.StandardButton.Ok)
             # 何もしない
             pass
         
