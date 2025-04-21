@@ -72,6 +72,10 @@
   {
    "optionDest": "datas",
    "value": "E:/Python/accident/start_date.txt;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "E:/Python/accident/target.txt;."
   }
  ],
  "nonPyinstallerOptions": {
